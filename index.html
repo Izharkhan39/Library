@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header class="header"><h1>Library</h1></header>
+    <div class="container">
+      <button id="addBook">+ Add Book</button>
+
+      <div class="book-display-container"></div>
+    </div>
+
+    <div class="modal" id="addBookModal">
+      <form class="add-book-form" id="addBookForm">
+        <h3>Add new book</h3>
+        <input
+          class="input"
+          type="text"
+          id="title"
+          placeholder="Title"
+          required=""
+          maxlength="100"
+        />
+
+        <input
+          class="input"
+          type="text"
+          id="author"
+          placeholder="Author"
+          required=""
+          maxlength="100"
+        />
+        <input
+          class="input"
+          type="number"
+          id="pages"
+          placeholder="Pages"
+          required=""
+          max="10000"
+        />
+        <div class="is-read">
+          <label for="isRead">Have you read it?</label>
+          <input class="checkbox" type="checkbox" id="isRead" />
+        </div>
+        <button class="btn btn-light-green" type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="modal" id="accountModal"></div>
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
