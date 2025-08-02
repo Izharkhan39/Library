@@ -1,23 +1,3 @@
-//Modal toggle Dom Elements
-const addBookBtn = document.querySelector("#addBook");
-const addBookModal = document.querySelector("#addBookModal");
-const overlay = document.querySelector("#overlay");
-
-//Modal toggle Event Listeners
-addBookBtn.addEventListener("click", openModal);
-overlay.addEventListener("click", closeModal);
-
-//Modal fucntions
-function openModal() {
-  addBookModal.classList.add("active");
-  overlay.classList.add("active");
-}
-
-function closeModal() {
-  addBookModal.classList.remove("active");
-  overlay.classList.remove("active");
-}
-
 const bookTitle = document.querySelector("#title");
 const bookAuthor = document.querySelector("#author");
 const bookPages = document.querySelector("#pages");
@@ -55,7 +35,6 @@ function addBookToLibrary() {
 
 document.querySelector("#addBookForm").addEventListener("submit", function (e) {
   e.preventDefault();
-
   addBookToLibrary();
   closeModal();
   document.querySelector("#addBookForm").reset();
@@ -90,6 +69,7 @@ function addBookCard(book) {
 
     if (book.isRead) {
       bookCardReadButton.textContent = "Read";
+
       bookCardReadButton.setAttribute(
         "style",
         "background-color: rgba(68, 232, 62, 0.58);"
@@ -97,7 +77,6 @@ function addBookCard(book) {
     } else {
       bookCardReadButton.textContent = "Not read";
 
-      bookCardReadButton.textContent = "Not read";
       bookCardReadButton.setAttribute(
         "style",
         "background-color: rgba(232, 62, 62, 0.58);"
@@ -128,10 +107,31 @@ function addBookCard(book) {
 
   bookCardRemoveButton.addEventListener("click", () => {
     document.querySelector(".book-display-container").removeChild(bookCard);
+
     for (let i = 0; i < myLibrary.length; i++) {
       if (myLibrary[i].id === bookCard.dataset.id) {
         myLibrary.splice(i, 1);
       }
     }
   });
+}
+
+//Modal toggle Dom Elements
+const addBookBtn = document.querySelector("#addBook");
+const addBookModal = document.querySelector("#addBookModal");
+const overlay = document.querySelector("#overlay");
+
+//Modal toggle Event Listeners
+addBookBtn.addEventListener("click", openModal);
+overlay.addEventListener("click", closeModal);
+
+//Modal fucntions
+function openModal() {
+  addBookModal.classList.add("active");
+  overlay.classList.add("active");
+}
+
+function closeModal() {
+  addBookModal.classList.remove("active");
+  overlay.classList.remove("active");
 }
