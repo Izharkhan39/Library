@@ -178,3 +178,31 @@ function resetForm() {
   closeModal();
   document.querySelector("#addBookForm").reset();
 }
+
+const title = document.getElementById("title");
+const author = document.getElementById("author");
+const pages = document.getElementById("pages");
+
+const titleError = document.querySelector("#title + span.titleError");
+const authorError = document.querySelector("#author + span.authorError");
+const pagesError = document.querySelector("#pages + span.pagesError");
+
+title.addEventListener("input", (event) => {
+  validateField(title, titleError, "You need to enter title off the book");
+});
+author.addEventListener("input", (event) => {
+  validateField(author, authorError, "You need to enter author's name");
+});
+pages.addEventListener("input", (event) => {
+  validateField(pages, pagesError, "You need to enter number of pages");
+});
+
+function validateField(input, errorSpan, message) {
+  if (input.validity.valid) {
+    errorSpan.textContent = "";
+    errorSpan.classList.remove("active");
+  } else if (input.validity.valueMissing) {
+    errorSpan.textContent = message;
+    errorSpan.classList.add("active");
+  }
+}

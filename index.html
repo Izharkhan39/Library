@@ -18,31 +18,43 @@
     <div class="modal" id="addBookModal">
       <form class="add-book-form" id="addBookForm">
         <h3>Add new book</h3>
-        <input
-          class="input"
-          type="text"
-          id="title"
-          placeholder="Title"
-          required=""
-          maxlength="100"
-        />
 
-        <input
-          class="input"
-          type="text"
-          id="author"
-          placeholder="Author"
-          required=""
-          maxlength="100"
-        />
-        <input
-          class="input"
-          type="number"
-          id="pages"
-          placeholder="Pages"
-          required=""
-          max="10000"
-        />
+        <label for="title">
+          <input
+            class="input"
+            type="text"
+            id="title"
+            placeholder="Title"
+            required=""
+            maxlength="100"
+          />
+          <span class="titleError" aria-live="polite"></span>
+        </label>
+
+        <label for="author">
+          <input
+            class="input"
+            type="text"
+            id="author"
+            placeholder="Author"
+            required=""
+            maxlength="100"
+          />
+          <span class="authorError" aria-live="polite"></span>
+        </label>
+
+        <label for="pages">
+          <input
+            class="input"
+            type="number"
+            id="pages"
+            placeholder="Pages"
+            required=""
+            maxlength="10000"
+          />
+          <span class="pagesError" aria-live="polite"></span>
+        </label>
+
         <div class="is-read">
           <label for="isRead">Have you read it?</label>
           <input class="checkbox" type="checkbox" id="isRead" />
@@ -58,8 +70,12 @@
         </script>
         Izhar Khan
       </p>
-      <a href="https://github.com/Izharkhan39" target="_blank">
-        <!-- <img class="github-logo" src="github-mark.svg" alt="github-logo" /> -->
+
+      <a
+        href="https://github.com/Izharkhan39"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><img class="github-logo" src="github.svg" alt="Github_logo" />
       </a>
     </footer>
 
